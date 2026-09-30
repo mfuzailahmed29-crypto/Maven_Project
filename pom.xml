@@ -60,7 +60,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Copy resources to docs -->
+            <!-- Copy Portfolio to docs -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -68,8 +68,7 @@
 
                 <executions>
                     <execution>
-                        <id>copy-resources-to-docs</id>
-
+                        <id>copy-portfolio-to-docs</id>
                         <phase>package</phase>
 
                         <goals>
@@ -84,18 +83,15 @@
                             <resources>
                                 <resource>
                                     <directory>
-                                        ${project.basedir}/src/main/resources
+                                        ${project.basedir}/src/main/webapp
                                     </directory>
-
-                                    <includes>
-                                        <include>*/</include>
-                                    </includes>
                                 </resource>
                             </resources>
-                        </configuration>
 
+                        </configuration>
                     </execution>
                 </executions>
+
             </plugin>
 
             <!-- Surefire + TestNG -->
@@ -109,6 +105,7 @@
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
+
             </plugin>
 
             <!-- Site -->
